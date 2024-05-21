@@ -11,7 +11,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: my_wordpress_db_password
+      WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_URL: http://legendary-giggle-95x4qvq47vwh9pgg-80.app.github.dev/
 
   db:
