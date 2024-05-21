@@ -1,0 +1,28 @@
+version: "3"
+services:
+  wordpress:
+    depends_on:
+      - db
+    build: .
+    volumes:
+      - wp_data:/var/www/html
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: my_wordpress_db_password
+      WORDPRESS_URL: http://legendary-giggle-95x4qvq47vwh9pgg-80.app.github.dev/
+
+  db:
+    image: mariadb
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+volumes:
+  wp_data:
+  db_data:
